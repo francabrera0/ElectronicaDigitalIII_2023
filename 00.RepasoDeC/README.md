@@ -189,7 +189,7 @@ int main(int argc, char const *argv[])
 
 - El tamaño de las variables y su posición en memoria
 
-- Toto dato está almacenado a partir de una dirección de memoria. Esta dirección puede ser obtenida y manipulada como un dato más.
+- Todo dato está almacenado a partir de una dirección de memoria. Esta dirección puede ser obtenida y manipulada como un dato más.
 
 
 
