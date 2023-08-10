@@ -13,3 +13,5 @@ add_executable(helloWorld src/helloWorld.c)
 
 add_executable(Main src/main.c src/dataType.c src/pointers.c src/struct.c)
 target_include_directories(Main PRIVATE "inc/")
+
+add_executable(LinkedList src/linkedList.c)
