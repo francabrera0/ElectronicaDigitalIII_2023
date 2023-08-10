@@ -300,7 +300,9 @@ int main() {
 
     Ver función `allocation()` definida en el archivo pointers.c.
 
+#### Listas enlazadas
 
+    Ver archivo `linkedList.c` en el directorio src.
 
 ## Structs
 
