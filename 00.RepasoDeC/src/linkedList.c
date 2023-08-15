@@ -24,11 +24,11 @@ int main() {
 
     Node* head = NULL;
 
-    Person person = {"Fernando", "Gallardo", 52};
+    Person person = {"José", "Sanchez", 52};
     insertBegin(&head, person);
 
-    strcpy(person.firstName, "Francisco");
-    strcpy(person.lastName, "Cabrera");
+    strcpy(person.firstName, "Matias");
+    strcpy(person.lastName, "Dominguez");
     person.age = 23;
     insertBegin(&head, person);
 
