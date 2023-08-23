@@ -26,7 +26,7 @@
 
     Se deberán aceptar los terminos y condiciones y luego nos llevará a una ventana con todos los instaladores disponibles. Descargar el adecuado para su sistema operativo (Linux, macOS, Windows).
 
-    En esta muestra se instalará para una distribución de Ubuntu 22.04.
+    En esta muestra se instalará para una distribución de Ubuntu 22.04. En caso de tener Windows como sistema operativo, el instalador que se descarga es un .exe que simplemente hay que ejecutar y seguir las instrucciones de instalación. A partir de la sección "Creación de un nuevo proyecto" es lo mismo para cualquier sistema operativo.
 
     Una vez descargado el archivo:
 
