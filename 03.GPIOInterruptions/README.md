@@ -4,7 +4,7 @@
 
 [Datasheets](https://drive.google.com/drive/folders/10A9xhIxx6ag75GtEwLzxr8pCdP6hR1HC)
 
-Ver capítulo 9 del User Manual
+Ver capítulo 9 y 3 del User Manual
 
 ## Interrupciones
 
@@ -91,3 +91,50 @@ En la ISR, se puede ver que en función del pin que genere la interrupción se e
     - Inicialmente al colocar el pin a 3.3V no interrumpe debido a que ya se encontraba en estado alto por la pullup. Al colocar el pin a GND se genera la interrupción por flanco descendente. Si se saca el pin de GND se producirá una nueva interrupción, ahora por flanco ascendente debido a la pullup. Se enciende el led Azul.
 
 Una buena forma de analizar este código es mediante un proceso de debug colocando un breakpoint en la ISR.
+
+
+### Interrupciones externas
+Se cuenta con cuatro interrupciones externas, estas son EINT0, EINT1, EINT2 y EINT3. Esto no es una funcion de GPIO si no que es una funcionalidad específica de un pin, por lo tanto es necesario configurar ese pin con dicha funcionalidad.
+
+![](img/8.png)
+
+Estos pines al configurarse como interrupción externa permiten interrumpir al procesador por nivel alto/bajo o por flanco ascendete/descendente.
+
+Es importante destacar que cada una de las interrupciones externas tiene un vector de interrupción propio asociado (salvo EINT3 que lo comparte con las interrupciones de GPIO).
+
+#### Registros asociados a la configuración de EINT
+
+Inicialmente podemos observar el registro PINSEL4, donde vemos que los bits 20:27 están asignados a la configuración de las interrupciones externas. 
+
+![](img/10.png)
+
+En la siguiente tabla se pueden ver los 3 registros asociados a la configuración y uso de interrupciones externas
+
+![](img/9.png)
+
+![](img/11.png)
+
+#### EXTINT
+Cuando un pin es configurado como interrupción externa, el nivel o flanco en ese pin (seleccionado por los registros EXTMODE y EXTPOLAR) activará una bandera de interrupción en este registro con una solicitud al NVIC. En caso que las interrupciones de dicho pin estén habilitadas, causará una interrupión al microprocesador.
+
+Escribir un 1 en los bits EINT0 a EINT3 borrará el correspondiente bit.
+
+En el modo de interrupción por nivel, la interrupción se borra sólo cuando el pin está en su estado inactivo.
+
+![](img/12.png)
+
+#### EXTMODE
+Los bits en este registro seleccionan si cada pin es level-sensitive o edge-sensitive.
+
+![](img/13.png)
+
+En el modo level-sensitive, este bit selecciona si el correspondente pin es high-active o low-active. En el modo edge-sensitive este bit selecciona si el pin es sensible a falling-edge o rising-edge.
+
+![](img/14.png)
+
+#### Ejemplo
+Para ver un ejemplo sobre esto, ver el archivo `src/externalInterrupt.c`.
+
+Este ejemplo hace lo mismo que el anterior. La diferencia está en que se usan las interrupciones externas EINT0, EINT1 y EINT2.
+
+Una buena forma de analizar el comportamiento del programa es en una sesión de debug colocando breakpoints en las ISR de cada EINT.
