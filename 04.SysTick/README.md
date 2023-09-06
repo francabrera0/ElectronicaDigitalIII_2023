@@ -99,15 +99,18 @@ Ver capítulo  23 del User Manual
 
 
 $$
-Ticks = 999999+1 = 1000000\\
+Ticks = 999999+1 = 1000000
+$$
+
+$$
 Frequency = 100[MHz]
-
-
 $$
 
 $$
 Time = Ticks \hspace{2mm} \frac{1}{Frequency}
-\\
+$$
+
+$$
 Time = \frac{1000000}{100000000[1/s]} =  0,01 [s] = 10[ms]
 $$
 
