@@ -47,6 +47,7 @@ Encender el timer. Para eso tenemos que colocar un '1' en los bits correspondien
 En el registro PCLKSEL0 (tabla 40) seleccionar la frecuencia de reloj para los timers 0 y 1. En el registro PCLKSEL1 (tabla 41) seleccionar la frecuencia de reloj para los timers 2 y 3.
 
 ![](./img/02.png)
+
 ![](./img/03.png)
 
 Se puede optar por 4 diferentes frecuencias: CCLK/4, CCLK, CCLK/2 y CCLK/8 (tabla 42).
