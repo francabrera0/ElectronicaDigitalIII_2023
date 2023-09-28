@@ -123,3 +123,6 @@ void delay(uint32_t times)
 }
 
 ```
+
+### Otro ejemplo
+Un ejemplo más complejo se puede encontrar en el directorio `src`. Es el mismo ejemplo que se vió en Timers pero implementado con drivers.
