@@ -1,6 +1,6 @@
 /*
  *  Times calculation
- * PR=4999 --> TC increments on every PR+1 CCLK = 50[us]
+ * PR=4999 --> TC increments on every PR+1/CCLK = 50[us]
  *
  * 		f=1[Hz]     --> T=1000[ms] --> Ttogle=500[ms]  --> MATCH = (500[ms]/50[us])-1 = 9999
  * 		f=10[Hz]    --> T=100[ms]  --> Ttogle=50[ms]   --> MATCH = (50[ms]/50[us])-1 = 999
