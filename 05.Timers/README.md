@@ -188,4 +188,7 @@ $$
 La máxima resolución que puede lograrse es de $10[ns]$ cuando se utiliza una frecuencia de $100[MHz]$ y $PR=0$.
 
 ## Ejemplos de código
-Revisar el directorio `src`
+Revisar el directorio `src`.
+
+En el ejemplo planteado, se genera una señal cuadrada de frecuencia variable utilizando el timer 0 en modo match. La frecuencia se actualiza a través de una interrupción externa en EINT0. 
+Luego, Se utiliza el timer 1 en modo captura para calcular el periodo de la señal generada (para probarlo será necesario conectar el pin 1.28 (MAT0.0) con el pin 1.18 (CAP1.0)).
