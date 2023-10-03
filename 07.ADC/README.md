@@ -11,7 +11,7 @@ Ver capítulo 29 del user manual.
 - Conversor analógico-digital de **aproximaciones sucesivas** de 12-bits.
 - Entrada multiplexada de 8 canales
 - Modo Power-Down
-- Rango de medición de $V_{REFN}$ a $V_{REFP}$ (Normalmente 3[V]; no debe exceder el nivel de tensión de $V_{DDA})
+- Rango de medición de $V_{REFN}$ a $V_{REFP}$ (Normalmente 3[V]; no debe exceder el nivel de tensión de $V_{DDA}$)
 - Tasa de conversión de 12 bits de 200[KHz]
 - Modo burst (ráfaga) para una o múltiples entradas
 - Conversión opcional en transición de un pin de entrada o señal de match de un timer.
@@ -19,7 +19,7 @@ Ver capítulo 29 del user manual.
 ## Descripción
 La señal de clock para el A/D es provista por el APB clock. Un divisor programable se incluye en cada conversor para escalar esta señal de reloj hasta la frecuencia necesaria para el proceso de aproximaciones sucesivas (máximo 13[MHz]). Una conversión en modo ráfaga requiere 64 pulsos de reloj mientras que una conversión en modo normal requiere 65 pulsos de reloj.
 
-La frecuencia de muestreo depende de la frecuencia de trabajo del ADC y de la cantidad de pulsos necesarios para la digitalización de una muestra. En nuestro caso, el la cantidad de pulsos es un número fijo de 65 (o 64 en modo burst). Por lo tanto, si nuestra frecuencia máxima de trabajo es de 13[MHz], podemos calcular la frecuencia de muestreo máxima de la siguiente manera:
+La frecuencia de muestreo depende de la frecuencia de trabajo del ADC y de la cantidad de pulsos necesarios para la digitalización de una muestra. En nuestro caso, la cantidad de pulsos es un número fijo de 65 (o 64 en modo burst). Por lo tanto, si nuestra frecuencia máxima de trabajo es de 13[MHz], podemos calcular la frecuencia de muestreo máxima de la siguiente manera:
 
 $$
 f_s = \frac{f_{APBclk}}{65} = \frac{13[MHz]}{65} = 200[KHz]
